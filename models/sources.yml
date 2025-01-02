@@ -1,0 +1,24 @@
+sources:
+# below source object were made for POC, please replace with SMC_SYSADM_SOURCE & SMC_SYSADM_SOURCE_STREAM
+
+ - name: source_trans
+   database: '{{ var("source_database") }}'
+   schema: src_data
+   tables:
+     - name: medical_events
+     - name: patient_t
+     - name: claims
+     - name: provider
+     - name: pharmacy
+     - name: care_gaps
+
+ - name: source_stg
+   database: '{{ var("source_database") }}'
+   schema: rawstage
+   tables:
+     - name: src_medical_events
+     - name: src_patient_data
+     - name: src_claims_data
+     - name: src_provider_data
+     - name: src_pharmacy_data
+     - name: src_care_gaps
